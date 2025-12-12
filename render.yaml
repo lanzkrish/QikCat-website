@@ -1,11 +1,12 @@
 services:
   - type: web
-    name: qikcat-waitlist
+    name: qikcat-backend
     env: node
     plan: free
     branch: main
-    buildCommand: cd server && npm install
-    startCommand: cd server && npm run start
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
     envVars:
       - key: MONGODB_URI
         sync: false
