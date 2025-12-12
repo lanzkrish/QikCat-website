@@ -17,8 +17,9 @@ export function DownloadApp() {
     }
     setLoading(true);
     try {
-      const res = fetch(`${import.meta.env.VITE_BACKEND_URL}/api/waitlist`, {
-
+      const base = (import.meta.env.VITE_BACKEND_URL || '').replace(/\/+$/, '');
+      const url = base ? `${base}/api/waitlist` : `/api/waitlist`;
+      const res = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: emailLower }),
@@ -38,7 +39,6 @@ export function DownloadApp() {
       setLoading(false);
     }
   };
-console.log("Backend URL:", import.meta.env.VITE_BACKEND_URL);
 
   return (
     <section className="py-24 md:py-32 bg-gradient-to-br from-[#582e50] to-[#432758] text-white relative overflow-hidden">
