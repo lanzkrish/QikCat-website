@@ -38,10 +38,12 @@ export function DownloadApp() {
       setLoading(false);
     }
   };
+console.log("Backend URL:", import.meta.env.VITE_BACKEND_URL);
 
   return (
     <section className="py-24 md:py-32 bg-gradient-to-br from-[#582e50] to-[#432758] text-white relative overflow-hidden">
       {/* Background decorations */}
+      
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#d35e37]/20 rounded-full blur-3xl" />
 
