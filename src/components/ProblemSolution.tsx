@@ -16,14 +16,14 @@ export function ProblemSolution() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-gray-50">
+    <section className="py-24 md:py-32 bg-[#ededec]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl md:text-5xl text-black mb-6">
+          <h2 className="text-4xl md:text-5xl text-[#432758] mb-6">
             The Problem We Solve
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-[#582e50]/70">
             Traditional shopping and quick-commerce both have gaps. We fill them.
           </p>
         </div>
@@ -36,7 +36,7 @@ export function ProblemSolution() {
               <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
                 <X className="w-6 h-6 text-red-600" />
               </div>
-              <h3 className="text-2xl text-black">
+              <h3 className="text-2xl text-[#432758]">
                 Everyday Frustrations
               </h3>
             </div>
@@ -50,7 +50,7 @@ export function ProblemSolution() {
                   <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <X className="w-4 h-4 text-red-600" />
                   </div>
-                  <p className="text-gray-700">
+                  <p className="text-[#582e50]">
                     {problem}
                   </p>
                 </div>
@@ -59,7 +59,7 @@ export function ProblemSolution() {
           </div>
 
           {/* Solutions */}
-          <div className="bg-gradient-to-br from-black to-gray-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl shadow-black/10">
+          <div className="bg-gradient-to-br from-[#582e50] to-[#432758] rounded-3xl p-8 md:p-12 text-white shadow-2xl shadow-[#582e50]/20">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center">
                 <Check className="w-6 h-6 text-white" />
@@ -75,7 +75,7 @@ export function ProblemSolution() {
                   key={index}
                   className="flex items-start gap-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10"
                 >
-                  <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-6 h-6 rounded-full bg-[#d35e37] flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-4 h-4 text-white" />
                   </div>
                   <p className="text-white/90">

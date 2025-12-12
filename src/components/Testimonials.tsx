@@ -37,16 +37,16 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-24 md:py-32 bg-gradient-to-b from-[#ededec] to-[#fdfefc]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl md:text-5xl text-black mb-6">
+          <h2 className="text-4xl md:text-5xl text-[#432758] mb-6">
             Loved by Customers
             <br />
             & Shop Owners
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-[#582e50]/70">
             Real feedback from our growing community.
           </p>
         </div>
@@ -56,38 +56,38 @@ export function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="bg-white rounded-3xl p-8 border border-black/10 hover:border-black/20 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-black/5"
+              className="bg-white rounded-3xl p-8 border border-[#582e50]/10 hover:border-[#d35e37]/30 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-[#d35e37]/10"
             >
               {/* Type badge */}
               <div className="flex items-center justify-between mb-6">
-                <div className="px-3 py-1 bg-black/5 rounded-full">
-                  <span className="text-xs text-black/70">{testimonial.type}</span>
+                <div className="px-3 py-1 bg-[#582e50]/5 rounded-full">
+                  <span className="text-xs text-[#582e50]/70">{testimonial.type}</span>
                 </div>
                 <div className="flex gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-black text-black" />
+                    <Star key={i} className="w-4 h-4 fill-[#d35e37] text-[#d35e37]" />
                   ))}
                 </div>
               </div>
 
               {/* Quote icon */}
-              <Quote className="w-10 h-10 text-black/10 mb-4" />
+              <Quote className="w-10 h-10 text-[#582e50]/10 mb-4" />
 
               {/* Quote */}
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-[#582e50] leading-relaxed mb-6">
                 "{testimonial.quote}"
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-3 pt-6 border-t border-black/5">
-                <div className="w-12 h-12 bg-gradient-to-br from-gray-200 to-gray-100 rounded-full flex items-center justify-center">
-                  <span className="text-lg text-black">
+              <div className="flex items-center gap-3 pt-6 border-t border-[#582e50]/5">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#ededec] to-[#fdfefc] rounded-full flex items-center justify-center border border-[#582e50]/10">
+                  <span className="text-lg text-[#582e50]">
                     {testimonial.name.charAt(0)}
                   </span>
                 </div>
                 <div>
-                  <div className="text-black">{testimonial.name}</div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-[#432758]">{testimonial.name}</div>
+                  <div className="text-sm text-[#582e50]/70">
                     {testimonial.role} • {testimonial.location}
                   </div>
                 </div>
