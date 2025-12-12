@@ -17,7 +17,8 @@ export function DownloadApp() {
     }
     setLoading(true);
     try {
-      const res = await fetch('/api/waitlist', {
+      const res = fetch(`${import.meta.env.VITE_BACKEND_URL}/api/waitlist`, {
+
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: emailLower }),
