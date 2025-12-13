@@ -63,6 +63,30 @@ async function main() {
 
   app.get("/api/health", (req, res) => res.json({ status: "ok" }));
 
+//------------------------------------------------------------------------------
+// Stress test endpoint
+//------------------------------------------------------------------------------
+  app.post("/api/stress-test", async (req, res) => {
+  try {
+    await waitlist.insertOne({
+      email: `test_${Date.now()}_${Math.random()}@stress.com`,
+      createdAt: new Date(),
+    });
+    res.json({ ok: true });
+  } catch (e) {
+    res.status(500).json({ ok: false });
+  }
+});
+
+//------------------------------------------------------------------------------
+// End of Stress test endpoint
+//------------------------------------------------------------------------------
+
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({ status: "error" });
+});
+
   app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
 }
 
