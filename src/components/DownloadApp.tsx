@@ -35,6 +35,8 @@ export function DownloadApp() {
       }
     } catch (err) {
       setMessage('Error connecting to server.');
+      console.log('BACKEND:', import.meta.env.VITE_BACKEND_URL);
+      console.error(err);
     } finally {
       setLoading(false);
     }
