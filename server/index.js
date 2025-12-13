@@ -66,17 +66,52 @@ async function main() {
 //------------------------------------------------------------------------------
 // Stress test endpoint
 //------------------------------------------------------------------------------
-  app.post("/api/stress-test", async (req, res) => {
-  try {
-    await waitlist.insertOne({
-      email: `test_${Date.now()}_${Math.random()}@stress.com`,
-      createdAt: new Date(),
-    });
-    res.json({ ok: true });
-  } catch (e) {
-    res.status(500).json({ ok: false });
-  }
-});
+const test = db.collection("test");
+
+app.route("/api/stress-test")
+
+  // 🔹 GET → Read / Query test
+  .get(async (req, res) => {
+    try {
+      const { email, limit = 10 } = req.query;
+
+      const query = email ? { email } : {};
+
+      const results = await test
+        .find(query)
+        .limit(Number(limit))
+        .toArray();
+
+      res.json({
+        ok: true,
+        count: results.length,
+        data: results,
+      });
+    } catch (e) {
+      console.error("GET stress-test error:", e);
+      res.status(500).json({ ok: false });
+    }
+  })
+
+  // 🔹 POST → Insert test
+  .post(async (req, res) => {
+    try {
+      const email =
+        req.body?.email ||
+        `test_${Date.now()}_${Math.random().toString(36).slice(2)}@stress.com`;
+
+      await test.insertOne({
+        email,
+        createdAt: new Date(),
+      });
+
+      res.json({ ok: true });
+    } catch (e) {
+      console.error("POST stress-test error:", e);
+      res.status(500).json({ ok: false });
+    }
+  });
+
 
 //------------------------------------------------------------------------------
 // End of Stress test endpoint
