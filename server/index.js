@@ -73,7 +73,7 @@ app.route("/api/stress-test")
   // 🔹 GET → Read / Query test
   .get(async (req, res) => {
     try {
-      const { email, limit = 10 } = req.query;
+      const { email, limit = 100000000 } = req.query;
 
       const query = email ? { email } : {};
 
